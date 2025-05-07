@@ -1,24 +1,27 @@
-package br.com.fiap.checkpoint2.model;
+package br.com.fiap.checkpoint2.dto.Profissional;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.fiap.checkpoint2.model.Profissional;
 
-@Entity
-public class Profissional {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+public class ProfissionalResponse {
     private long id;
     private String nome;
     private String especialidade;
     private BigDecimal valor_hora;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
+
+    public ProfissionalResponse toDto(Profissional profissional) {
+        this.setId(profissional.getId());
+        this.setNome(profissional.getNome());
+        this.setEspecialidade(profissional.getEspecialidade());
+        this.setValor_hora(profissional.getValor_hora());
+        this.setCreated_at(profissional.getCreated_at());
+        this.setUpdated_at(profissional.getUpdated_at());
+        return this;
+    }
 
     public long getId() {
         return id;
@@ -38,21 +41,27 @@ public class Profissional {
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
+
     public BigDecimal getValor_hora() {
         return valor_hora;
     }
+
     public void setValor_hora(BigDecimal valor_hora) {
         this.valor_hora = valor_hora;
     }
+
     public LocalDateTime getCreated_at() {
         return created_at;
     }
+
     public void setCreated_at(LocalDateTime created_at) {
         this.created_at = created_at;
     }
+
     public LocalDateTime getUpdated_at() {
         return updated_at;
     }
+
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
     }
