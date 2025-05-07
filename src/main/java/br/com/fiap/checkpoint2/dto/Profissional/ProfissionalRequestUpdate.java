@@ -43,5 +43,4 @@ public class ProfissionalRequestUpdate {
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
     }
-    
 }

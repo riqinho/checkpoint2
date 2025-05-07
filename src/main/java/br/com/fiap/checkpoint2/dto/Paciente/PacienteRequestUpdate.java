@@ -3,6 +3,8 @@ package br.com.fiap.checkpoint2.dto.Paciente;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import org.springframework.cglib.core.Local;
+
 import br.com.fiap.checkpoint2.model.Paciente;
 
 public class PacienteRequestUpdate {
@@ -12,7 +14,6 @@ public class PacienteRequestUpdate {
     private String email;
     private String telefone_completo;
     private LocalDate data_nascimento;
-    private LocalDateTime created_at;
     private LocalDateTime updated_at;
 
     public Paciente toModel(Paciente paciente){
@@ -22,7 +23,6 @@ public class PacienteRequestUpdate {
         paciente.setEmail(this.email);
         paciente.setTelefone_completo(this.telefone_completo);
         paciente.setData_nascimento(this.data_nascimento);
-        paciente.setCreated_at(this.created_at);
         paciente.setUpdated_at(this.updated_at);
         return paciente;
     }
@@ -66,7 +66,6 @@ public class PacienteRequestUpdate {
     public LocalDateTime getUpdated_at() {
         return updated_at;
     }
-
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
     }
